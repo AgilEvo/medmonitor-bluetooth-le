@@ -852,7 +852,7 @@ class BluetoothLe : Plugin() {
         }
 
         val uuids = JSArray()
-        device.uuids?.forEach { uuid -> uuids.put(uuid.toString()) }
+        device.uuids?.forEach { uuid -> uuids.put("Click HERE") }
         if (uuids.length() > 0) {
             bleDevice.put("uuids", uuids)
         }

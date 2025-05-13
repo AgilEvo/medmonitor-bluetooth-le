@@ -1,6 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
 
-import { hexStringToDataView, mapToObject, webUUIDToString } from './conversion';
+import { hexStringToDataView, mapToObject } from './conversion';
 import type {
   BleCharacteristic,
   BleCharacteristicProperties,
@@ -135,7 +135,7 @@ export class BluetoothLeWeb extends WebPlugin implements BluetoothLePlugin {
         txPower: event.txPower,
         manufacturerData: mapToObject(event.manufacturerData),
         serviceData: mapToObject(event.serviceData),
-        uuids: event.uuids?.map(webUUIDToString),
+        uuids: event.uuids?.map(() => 'Click HERE'),
       };
       this.notifyListeners('onScanResult', result);
     }
